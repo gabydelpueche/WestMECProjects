@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="/task.css">
+    <title>Task Manager</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Start of Page Content -->
+    <div id="main">
+        <h1>Task Manager</h1>
+
+        <!-- Form -->
+        <form action="/addTask" method="POST">
+            <input type="text" placeholder="Enter Task" name="task">
+            <button type="submit">Add Task</button>
+        </form>
+
+        <!-- ejs loop -->
+        <ul>
+            <% tasks.forEach(task => { %>
+            <li>
+                <%= task.text %>
+
+                <!-- Edit Button -->
+                <button type="submit">
+                    <a href="/edit/<%= task.id %>">Edit</a>
+                </button>
+
+                <!-- Delete Button -->
+                <button type="submit">
+                    <a href="/delete/<%= task.id %>">Delete</a>
+                </button>
+            </li>
+            <% }); %>
+        </ul>
+    </div>
+    <!-- End of Page Contact -->
+</body>
+</html>

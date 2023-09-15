@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit Task</h1>
+    
+    <form action="/edit/<%= edited.name %>" method="POST">
+        <!-- Edit Name -->
+        <label for="name">Edit Name:</label>
+        <input id="name" type="text" name="name" value="<%= edited.name %>">
+        <!-- Edit Phone -->
+        <label for="phone">Edit Phone:</label>
+        <input id="phone" type="tel" name="phone" value="<%= edited.phone %>">
+        <!-- Edit Email -->
+        <label for="email">Edit Email:</label>
+        <input id="email" type="email" name="email" value="<%= edited.email %>">
+        
+        <button type="submit">Save</button>
+    </form>
+
+    <a href="/">Back to Tasks</a>
+</body>
+</html>

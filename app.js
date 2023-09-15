@@ -24,13 +24,10 @@ app.get('/', (req, res) =>{
     res.render('upload');
 });
 
-app.get()
-
 app.post('/upload', upload.single('file'), (req, res) =>{
     if(!req.file){
         return res.status(400).send('File was not uploaded');
     };
-    const buffer = 
     res.status(200).send('File was succesfully uploaded');
 });
 
